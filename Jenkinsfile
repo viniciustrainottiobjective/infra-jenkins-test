@@ -27,7 +27,7 @@ node ('master'){
         }
 
         withFileParameter("JenkinsDeployServerPrivateSSHKey") {
-            sh "cat $JenkinsDeployServerPrivateSSHKey"
+            sh "cat '$JenkinsDeployServerPrivateSSHKey'"
         }
     }   
 }
