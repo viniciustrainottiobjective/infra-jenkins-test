@@ -2,7 +2,7 @@
 
 def fileParameter(String name, String description) {
     return [
-            $class      : 'FileParameterDefinition',
+            $class      : 'Base64FileParameterDefinition',
             name        : name,
             description : description
     ]
@@ -27,6 +27,7 @@ node ('master'){
             sh "ls -lha"
             sh "pwd"
             sh "cd .."
+            sh "pwd"
             sh "ls -lha"
         }
     }   
