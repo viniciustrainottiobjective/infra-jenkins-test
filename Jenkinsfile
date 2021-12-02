@@ -11,7 +11,7 @@ def fileParameter(String name, String description) {
 properties([disableConcurrentBuilds(),
     [$class: 'ParametersDefinitionProperty',
         parameterDefinitions: [
-            fileParameter("/var/jenkins_home/workspace/JenkinsDeployServerPrivateKey.pem", "")
+            fileParameter("JenkinsDeployServerPrivateSSHKey", "")
         ]
     ]
 ])
@@ -22,13 +22,12 @@ node ('master'){
     }
 
     stage('Testing') {
-
         script {
             sh "ls -lha"
-            sh "pwd"
-            sh "cd .."
-            sh "pwd"
-            sh "ls -lha"
+        }
+
+        withFileParameter("JenkinsDeployServerPrivateSSHKey") {
+            sh "cat $JenkinsDeployServerPrivateSSHKey"
         }
     }   
 }
