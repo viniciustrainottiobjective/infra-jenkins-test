@@ -11,7 +11,7 @@ def fileParameter(String name, String description) {
 properties([disableConcurrentBuilds(),
     [$class: 'ParametersDefinitionProperty',
         parameterDefinitions: [
-            fileParameter("JenkinsDeployServerPrivateKey.pem", "")
+            fileParameter("/var/jenkins_home/workspace/Testing File Parameter/JenkinsDeployServerPrivateKey.pem", "")
         ]
     ]
 ])
