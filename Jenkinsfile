@@ -11,7 +11,7 @@ def fileParameter(String name, String description) {
 properties([disableConcurrentBuilds(),
     [$class: 'ParametersDefinitionProperty',
         parameterDefinitions: [
-            fileParameter("/var/jenkins_home/workspace/Testing File Parameter/JenkinsDeployServerPrivateKey.pem", "")
+            fileParameter("/var/jenkins_home/workspace/JenkinsDeployServerPrivateKey.pem", "")
         ]
     ]
 ])
@@ -26,6 +26,8 @@ node ('master'){
         script {
             sh "ls -lha"
             sh "pwd"
+            sh "cd .."
+            sh "ls -lha"
         }
     }   
 }
