@@ -17,11 +17,15 @@ properties([disableConcurrentBuilds(),
 ])
 
 node ('master'){
+    stage('Checkout') {
+        checkout scm
+    }
 
     stage('Testing') {
 
         script {
             sh "ls -lha"
+            sh "pwd"
         }
     }   
 }
