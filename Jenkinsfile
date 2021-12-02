@@ -17,9 +17,6 @@ properties([disableConcurrentBuilds(),
 ])
 
 node ('master'){
-    stage('Checkout') {
-        checkout scm
-    }
 
     stage('Testing') {
 
